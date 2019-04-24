@@ -4,8 +4,8 @@
   "description": "Sass test aplication",
   "main": "index.js",
   "scripts": {
-    "bulid": "sass --update sass:css --sourcemap=none --no-cache",
-    "watch": "sass --watch sass:css --sourcemap=none --no-cache",
+    "bulid": "sass --update sass:css --no-source-map",
+    "watch": "sass --watch sass:css --no-source-map",
     "start": "http-server . -o"
   },
   "repository": {

@@ -1,8 +1,38 @@
 $font-primary:  Helvetica, sans-serif
 $color-primary: white
-$background-color-primary: black
+$color-secound: black
+
+%default-padding-margin
+  padding: 0px
+  margin: 0px
+
+=border($size)
+    border: 1px solid $color-primary
 
 body
+  @extend %default-padding-margin
   font: 100% $font-primary
   color: $color-primary
-  background-color: $background-color-primary
+  background-color: $color-secound
+  width: 80%
+  margin-left: 10%
+
+table 
+  @extend %default-padding-margin
+  +border(1px)
+  border-collapse: collapse
+  width: 100%
+  tr 
+    +border(1px)
+  tr:first-child
+    text-transform: uppercase
+    text-align: center
+  td 
+    +border(1px)
+    padding: 5px   
+  .active
+    background-color: silver
+
+.pre-column
+  width: 49%
+  float: left

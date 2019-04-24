@@ -1,15 +1,137 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="icon" href="images/favicon.png">
-    </head>
 
-    <body>
-        <h1>sass-playground</h1>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <h1>sass-playground</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in egestas dolor, in posuere libero. Etiam ac
+        sem eu dolor rhoncus rhoncus ac id erat. In luctus sit amet justo nec condimentum.</p>
+    <p class="active">Active text</p>
+    <table>
+        <tr>
+            <td>td</td>
+            <td>td</td>
+            <td>td</td>
+        </tr>
+        <tr>
+            <td colspan="2">colspan</td>
+            <td>td</td>
+        </tr>
+        <tr>
+            <td rowspan="2">rowspan</td>
+            <td>td</td>
+            <td>td</td>
+        </tr>
+        <tr>
+            <td>td</td>
+            <td>td</td>
+        </tr>
+        <tr class="active">
+            <td>td</td>
+            <td>td</td>
+            <td>td</td>
+        </tr>
+    </table>
+
+    <div class="pre-column">
+        <p>SASS</p>
+        <pre>
+$font-primary:  Helvetica, sans-serif
+$color-primary: white
+$color-secound: black
+
+%default-padding-margin
+    padding: 0px
+    margin: 0px
+
+=border($size)
+    border: 1px solid $color-primary
+
+body
+    @extend %default-padding-margin
+    font: 100% $font-primary
+    color: $color-primary
+    background-color: $color-secound
+    width: 80%
+    margin-left: 10%
+
+table 
+    @extend %default-padding-margin
+    +border(1px)
+    border-collapse: collapse
+    width: 100%
+    tr 
+    +border(1px)
+    tr:first-child
+    text-transform: uppercase
+    text-align: center
+    td 
+    +border(1px)
+    padding: 5px   
+    .active
+    background-color: silver
+
+.pre-column
+    width: 49%
+    float: left
+        </pre>
+    </div>
+    <div class="pre-column">
+        <p>CSS</p>
+        <pre>
+table,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font: 100% Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    width: 80%;
+    margin-left: 10%;
+}
+
+table {
+    border: 1px solid white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr {
+    border: 1px solid white;
+}
+
+table tr:first-child {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+table td {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+table .active {
+    background-color: silver;
+}
+
+.pre-column {
+    width: 49%;
+    float: left;
+}
+        </pre>
+    </div>
+
+</body>
+
 </html>
